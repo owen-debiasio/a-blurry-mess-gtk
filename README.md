@@ -14,6 +14,9 @@ My Hyprland dot/config files
 ## [VSCodium](https://github.com/VSCodium/vscodium)
 - **Theme**: [Papirus](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 - **Icons**: [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme)
+## [Zed](https://github.com/zed-industries/zed)
+- **Theme**: [Bloled](https://github.com/owen-debiasio/bloled)
+- **Icons**: [Material Icon Theme](https://zed.dev/extensions/material-icon-theme)
 ## [Zen Browser](https://github.com/zen-browser)
 - [Zen Internet](https://github.com/sameerasw/zeninternet) + [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/) extension
 - Accent color `#2251C0` set through about:config -> `zen.theme.accent-color`
