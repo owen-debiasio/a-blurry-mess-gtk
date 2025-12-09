@@ -19,7 +19,8 @@ My Hyprland dot/config files
 - Accent color `#2251C0` set through about:config -> `zen.theme.accent-color`
 # Apps
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
-- **File Manager**: [Yazi](https://github.com/sxyazi/yazi)
+<!-- - **File Manager**: [Yazi](https://github.com/sxyazi/yazi) -->
+- **File Manager**: [Nemo](https://github.com/linuxmint/nemo)
 - **Application launcher**: [wofi](https://github.com/SimplyCEO/wofi)
 - **System Monitor:** [btop](https://github.com/aristocratos/btop)
 - **Screen Locker**: [hyprlock](https://github.com/hyprwm/hyprlock)
