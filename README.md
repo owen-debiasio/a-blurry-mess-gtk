@@ -7,7 +7,7 @@ My Hyprland dot/config files
 
 # Basic configuration
 
-## Themeing
+## Theming
 ### Universal
 - **QT/GTK**: [Orchis Dark (Pure black tweak)](https://github.com/vinceliuice/Orchis-theme) w/ [Orchis Dark kvantum](https://store.kde.org/p/1458909/)
 - **Icons**: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
