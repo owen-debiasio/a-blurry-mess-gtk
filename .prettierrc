@@ -1,0 +1,13 @@
+{
+    "tabWidth": 4,
+    "proseWrap": "always",
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": ["*.md", "*.json", "*.css"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}

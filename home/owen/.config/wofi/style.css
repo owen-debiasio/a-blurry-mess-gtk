@@ -1,0 +1,16 @@
+#window #outer-box #input {
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 1.5rem;
+}
+
+#window #outer-box #scroll #inner-box #entry {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 1rem 1rem;
+  font-size: 1.25rem;
+}
+
+#window #outer-box #scroll #inner-box #entry #img {
+  width: 0rem;
+  margin-right: 0.5rem;
+}

@@ -1,0 +1,14 @@
+
+[audacious]
+use_qt=FALSE
+
+[gtkui]
+column_widths=10,275,175,10,175,175,10,100,38,10,275,275,275,10,275,175,75,10,50,50
+player_maximized=TRUE
+
+[gtkui-layout]
+item_count=0
+
+[qtui]
+player_height=491
+player_width=176
