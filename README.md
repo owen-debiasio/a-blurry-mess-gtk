@@ -118,7 +118,8 @@ have provided here.
 
 #### Accent color
 
-> [!NOTE] Set through `about:config` -> `zen.theme.accent-color`
+> [!NOTE]  
+> Set through `about:config` -> `zen.theme.accent-color`
 
 - Accent color: `#3584e4`
 
