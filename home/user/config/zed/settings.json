@@ -7,29 +7,43 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "existing_window",
   "terminal": {
-    "minimum_contrast": 1.0,
-    "cursor_shape": "bar"
+    "open_links_in_mouse_mode": false
   },
-  "title_bar": {
-    "show_menus": true
+  "close_on_file_delete": true,
+  "inlay_hints": {
+    "enabled": false
   },
-  "show_completion_documentation": false,
-  "completions": {
-    "lsp": true
+  "minimap": {
+    "show": "always"
   },
-  "show_completions_on_input": true,
   "autosave": {
     "after_delay": {
       "milliseconds": 0
     }
   },
-  "icon_theme": "Zed (Default)",
+  "outline_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "title_bar": {
+    "show_sign_in": false
+  },
+  "disable_ai": true,
+  "project_panel": {
+    "dock": "left"
+  },
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
     "mode": "system",
-    "light": "bloled",
-    "dark": "bloled"
-  }
+    "light": "One Light",
+    "dark": "Orchis Dark",
+  },
 }
