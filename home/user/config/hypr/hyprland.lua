@@ -53,11 +53,14 @@ hl.monitor({
 --------------------------------------------------------------------------------
 -- Core System Settings (Config Object)
 --------------------------------------------------------------------------------
+
 hl.config({
     general = {
         gaps_in = 5,
         gaps_out = 20,
         border_size = 2,
+        ["col.active_border"] = "rgba(3584e4ff)",
+        ["col.inactive_border"] = "rgba(2d2d2dff)",
         resize_on_border = true,
         allow_tearing = false,
         layout = "dwindle"
@@ -82,17 +85,17 @@ hl.config({
             { name = "quick",        p1 = 0.15, p2 = 0,    p3 = 0.1,  p4 = 1 }
         },
         animation = {
-    { name = "global",      enabled = true, speed = 8, curve = "default" },
-    { name = "border",      enabled = true, speed = 10, curve = "easeOutQuint" },
-    { name = "windows",     enabled = true, speed = 6, curve = "easeOutQuint" },
-    { name = "windowsIn",   enabled = true, speed = 15, curve = "quick", style = "popin 95%" },
-    { name = "windowsOut",  enabled = true, speed = 6, curve = "quick",        style = "popin 85%" },
-    { name = "fadeIn",      enabled = true, speed = 15, curve = "quick" },
-    { name = "fadeOut",     enabled = true, speed = 5, curve = "almostLinear" },
-    { name = "fade",        enabled = true, speed = 5, curve = "quick" },
-    { name = "layers",      enabled = true, speed = 6, curve = "easeOutQuint" },
-    { name = "workspaces",  enabled = true, speed = 5, curve = "almostLinear", style = "fade" }
-}
+            { name = "global",      enabled = true, speed = 8, curve = "default" },
+            { name = "border",      enabled = true, speed = 10, curve = "easeOutQuint" },
+            { name = "windows",     enabled = true, speed = 6, curve = "easeOutQuint" },
+            { name = "windowsIn",   enabled = true, speed = 15, curve = "quick", style = "popin 95%" },
+            { name = "windowsOut",  enabled = true, speed = 6, curve = "quick", style = "popin 85%" },
+            { name = "fadeIn",      enabled = true, speed = 15, curve = "quick" },
+            { name = "fadeOut",     enabled = true, speed = 5, curve = "almostLinear" },
+            { name = "fade",        enabled = true, speed = 5, curve = "quick" },
+            { name = "layers",      enabled = true, speed = 6, curve = "easeOutQuint" },
+            { name = "workspaces",  enabled = true, speed = 5, curve = "almostLinear", style = "fade" }
+        }
     },
 
     misc = {
@@ -106,11 +109,7 @@ hl.config({
 --------------------------------------------------------------------------------
 -- Window & Layer Rules
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Window & Layer Rules (Fixed for Hyprland v0.55)
---------------------------------------------------------------------------------
 
--- Window Rules
 hl.window_rule({ match = { class = "^(steam_app_.)" }, fullscreen = true })
 hl.window_rule({ match = { class = "^(steam_app_223470)$" }, stay_focused = true })
 hl.window_rule({ match = { class = "^(kcm_about-distro)$" }, float = true })
@@ -123,9 +122,6 @@ hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
 
 --------------------------------------------------------------------------------
 -- Keybindings & Mouse Binds
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Keybindings & Mouse Binds (Fixed for Hyprland v0.55 hl.dsp)
 --------------------------------------------------------------------------------
 
 -- Apps & Core Actions
@@ -153,7 +149,7 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 
 -- Workspace Operations Loop
 for i = 1, 10 do
-    local key = tostring(i % 10) -- 10 becomes "0"
+    local key = tostring(i % 10)
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
