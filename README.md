@@ -45,7 +45,7 @@ Things I recommend you have
   through Kitty)
 - **Disk Manager**: [GNOME Disks](https://apps.gnome.org/DiskUtility/)
 - **Bluetooth Manager**: [blueman](https://github.com/blueman-project/blueman)
-- **Network Manager**: [NMGUI](https://github.com/s-adi-dev/nmgui)
+- **Network Manager**: [nm-connection-editor](https://archlinux.org/packages/extra/x86_64/networkmanager/)
 - **Audio Control**:
   [Pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
 

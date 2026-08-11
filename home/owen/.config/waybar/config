@@ -42,7 +42,7 @@
     "format-wifi": "{icon}",
     "format-disconnected": "󰤮",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "on-click": "nmgui"
+    "on-click": "nm-connection-editor"
   },
 
   "tray": {
