@@ -116,7 +116,7 @@ hl.window_rule({ match = { class = "^(steam_app_223470)$" }, stay_focused = true
 hl.window_rule({ match = { class = "^(kcm_about-distro)$" }, float = true })
 hl.window_rule({ match = { class = "." }, suppress_event = "maximize" })
 hl.window_rule({ match = { xwayland = true, float = true }, no_focus = true })
-hl.window_rule({ match = { class = ".*" }, opacity = "0.9 0.9" })
+hl.window_rule({ match = { class = ".*" }, opacity = "0.85 0.85" })
 
 -- Layer Rules
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
