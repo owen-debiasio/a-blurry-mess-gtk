@@ -44,6 +44,10 @@ Things I recommend you have
 - **System Monitor**: [btop](https://github.com/aristocratos/btop) (Launched
   through Kitty)
 - **Disk Manager**: [GNOME Disks](https://apps.gnome.org/DiskUtility/)
+- **Bluetooth Manager**: [blueman](https://github.com/blueman-project/blueman)
+- **Network Manager**: [NMGUI](https://github.com/s-adi-dev/nmgui)
+- **Audio Control**:
+  [Pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
 
 ##### Multimedia
 
