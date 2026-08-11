@@ -20,12 +20,12 @@ My Hyprland dot/config files
 - Disable Status Bar
 - Transparent Zen
   - Settings:
-    - Allow transparency = **enabled** (The Linux one too)
-    - Disable transparency when not in focus on linux = **disabled**
-    - Transparent sidebar (bookmarks, history and sync) = **enabled**
-    - Transparent glance = **true**
-    - Enable custom background color for Zen = **true**
-      - Set color to: #212121
+    - Allow transparency = `enabled` (The Linux one too)
+    - Disable transparency when not in focus on linux = `disabled`
+    - Transparent sidebar (bookmarks, history and sync) = `enabled`
+    - Transparent glance = `true`
+    - Enable custom background color for Zen = `true`
+      - Set color to: `#212121`
 # Apps
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **File Manager**: [Nemo](https://github.com/linuxmint/nemo)/[Yazi](https://github.com/sxyazi/yazi)
