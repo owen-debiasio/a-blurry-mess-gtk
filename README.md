@@ -29,7 +29,8 @@ Things I recommend you have
 
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **File Manager**: [Nemo](https://github.com/linuxmint/nemo)/[Yazi](https://github.com/sxyazi/yazi)
-- **System Monitor:** [btop](https://github.com/aristocratos/btop) (Launched through Kitty)
+- **System Monitor**: [btop](https://github.com/aristocratos/btop) (Launched through Kitty)
+- **Disk Manager**: [GNOME Disks](https://apps.gnome.org/DiskUtility/)
 
 ##### Multimedia
 
