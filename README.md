@@ -14,6 +14,8 @@ The apps I choose to use. As always, use what you wish
 
 ### Essentials
 
+Things I recommend you have
+
 #### Desktop/System
 
 - **Wallpaper manager**: [hyprpaper](https://github.com/hyprwm/hyprpaper)
@@ -36,6 +38,14 @@ The apps I choose to use. As always, use what you wish
 - **Music Player**: [Fooyin](https://archlinux.org/packages/extra/x86_64/fooyin/)
 - **Video Player**: [mpv](https://archlinux.org/packages/extra/x86_64/mpv/)
 
+#### Terminal Ricing
+
+- **Shell**: Bash
+- **Shell prompt**: [Starship](https://starship.rs/)
+- **Extras**:
+  - **ble.sh**: [Github Repo](https://github.com/akinomyoga/ble.sh)
+  - **bash-completion**: [Github Repo](https://github.com/scop/bash-completion)
+
 ##### Theming tools
 
 - **QT Customizer**: [qt6ct](https://github.com/trialuser02/qt6ct)
@@ -43,6 +53,8 @@ The apps I choose to use. As always, use what you wish
 - **Kvantum**: [Kvantum](https://github.com/tsujan/kvantum)
 
 ### Everyday
+
+Things I use all the time. Not super important but worth mentioning
 
 - **Zen Browser**: [Github Repository](https://github.com/zen-browser)
 - **Steam**: [Arch Linux package](https://archlinux.org/packages/multilib/x86_64/steam/)
@@ -65,14 +77,24 @@ This rice is heavily inspired by the colors of [Orchis Dark](https://github.com/
 - **Theme**: [Orchis Dark Zed Theme](https://github.com/owen-debiasio/orchis-dark-zed-theme)
 ### [Zen Browser](https://github.com/zen-browser)
 - [Zen Internet](https://github.com/sameerasw/zeninternet) + [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/) extension
-- Accent color `#3584e4` set through about:config -> `zen.theme.accent-color`
+
+#### Accent color
+
+> [!NOTE]
+> Set through `about:config` -> `zen.theme.accent-color`
+
+- Accent color: `#3584e4`
+
 #### Mods
-- Disable Status Bar
-- Transparent Zen
-  - Settings:
-    - Allow transparency = `enabled` (The Linux one too)
-    - Disable transparency when not in focus on linux = `disabled`
-    - Transparent sidebar (bookmarks, history and sync) = `enabled`
-    - Transparent glance = `true`
-    - Enable custom background color for Zen = `true`
+
+Some mods I've chosen to enhance Zen for myself.
+
+- **Disable Status Bar**: [Mod Homepage](https://zen-browser.app/mods/b51ff956-6aea-47ab-80c7-d6c047c0d510)
+- **Transparent Zen**: [Mod Homepage](https://zen-browser.app/mods/642854b5-88b4-4c40-b256-e035532109df)
+  - **Settings**:
+    - Allow Transparency = `enabled` **(The Linux one too)**
+    - Disable transparency when not in focus on Linux = `disabled`
+    - Transparent Sidebar = `enabled`
+    - Transparent Glance = `true`
+    - Enable custom background color = `true`
       - Set color to: `#212121`
