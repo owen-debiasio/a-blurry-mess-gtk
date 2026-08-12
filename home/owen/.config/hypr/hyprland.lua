@@ -134,7 +134,7 @@ hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("__NV_PRIME_RENDER_OFFLOAD=0 hyprlock"))
 
 -- Screenshots via Hyprshot
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot --mode output -o ~/Pictures/Screenshots"))
@@ -187,7 +187,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("hyprlock")
+    hl.exec_cmd("__NV_PRIME_RENDER_OFFLOAD=0 hyprlock")
 
     -- Clipboard Daemon
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
