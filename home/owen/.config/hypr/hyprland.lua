@@ -5,7 +5,7 @@
 --------------------------------------------------------------------------------
 local mainMod = "SUPER"
 local terminal = "kitty"
-local fileManager = "kitty yazi"
+local fileManager = "nemo"
 local menu = "wofi --show drun -IibnO"
 local systemMonitor = "kitty btop"
 
@@ -127,7 +127,6 @@ hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
 -- Apps & Core Actions
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
-hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("hyprctl dispatch exit"))
 hl.bind(mainMod .. " + SHIFT + ALT + E", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(systemMonitor))
@@ -135,7 +134,7 @@ hl.bind(mainMod .. " + SHIFT + Space", hl.dsp.window.float({ action = "toggle" }
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
-hl.bind("SUPER + L", hl.dsp.exec_cmd("env __NV_PRIME_RENDER_OFFLOAD=0 hyprlock"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Screenshots via Hyprshot
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot --mode output -o ~/Pictures/Screenshots"))
@@ -173,25 +172,22 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 --------------------------------------------------------------------------------
--- Autostart / Exec-once
+-- Autostart
 --------------------------------------------------------------------------------
---------------------------------------------------------------------------------
--- Autostart / Exec-once (Fixed for Hyprland v0.55 Event Hooks)
---------------------------------------------------------------------------------
-
 hl.on("hyprland.start", function()
     -- Core Daemons & Security
-    hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
     hl.exec_cmd("dbus-update-activation-environment --all")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,ssh")
+    
+    -- Start gnome-keyring and export its variables (wrapped in sh -c for eval/&& support)
+    hl.exec_cmd("sh -c 'eval $(gnome-keyring-daemon --start --components=secrets,ssh) && dbus-update-activation-environment --systemd SSH_AUTH_SOCK'")
 
     -- UI Desktop Components
     hl.exec_cmd("swaync")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("env __NV_PRIME_RENDER_OFFLOAD=0 hyprlock")
+    hl.exec_cmd("hyprlock")
 
     -- Clipboard Daemon
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
@@ -201,7 +197,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
-    
+
     hl.dispatch(hl.dsp.focus({ workspace = 2 }))
     hl.dispatch(hl.dsp.focus({ monitor = "DP-1" }))
 end)
