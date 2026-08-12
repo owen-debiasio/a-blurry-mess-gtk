@@ -6,14 +6,13 @@
   "output": "DP-1",
   "reload_style_on_change": true,
 
-  "modules-left": ["custom/youtube", "tray"],
+  "modules-left": ["custom/audio", "tray"],
   "modules-center": ["clock"],
   "modules-right": ["bluetooth", "network", "wireplumber"],
 
-  "custom/youtube": {
-    "exec": "/home/owen/.config/waybar/scripts/audio.sh",
-    "interval": 1,
-    "on-click": "youtube-music"
+  "custom/audio": {
+    "exec": "~/.config/waybar/scripts/audio.sh",
+    "interval": 1
   },
 
   "clock": {

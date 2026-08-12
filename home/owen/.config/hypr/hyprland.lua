@@ -5,9 +5,9 @@
 --------------------------------------------------------------------------------
 local mainMod = "SUPER"
 local terminal = "kitty"
-local fileManager = "nemo"
+local fileManager = "nautilus"
 local menu = "wofi --show drun -IibnO"
-local systemMonitor = "kitty btop"
+local systemMonitor = "resources"
 
 -- Environment Variables
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
@@ -29,7 +29,6 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_MENU_PREFIX", "arch-")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("XCURSOR_SIZE", "24")
 hl.env("KDE_SESSION_VERSION", "6")
 hl.env("GSK_RENDERER", "ngl")
 hl.env("EDITOR", "nano")
@@ -197,6 +196,7 @@ hl.on("hyprland.start", function()
     -- Look & Feel / Initialization Commands
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
+    hl.exec_cmd("gsettings set org.gnome.desktop.wm.preferences button-layout ':'")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 
     hl.dispatch(hl.dsp.focus({ workspace = 2 }))

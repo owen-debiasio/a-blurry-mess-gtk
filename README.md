@@ -39,25 +39,22 @@ Things I recommend you have
 #### Essential Apps
 
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
-- **File Manager**:
-  [Nemo](https://github.com/linuxmint/nemo)/[Yazi](https://github.com/sxyazi/yazi)
-- **System Monitor**: [btop](https://github.com/aristocratos/btop) (Launched
-  through Kitty)
+- **File Manager**: [Nautilus](https://apps.gnome.org/en/Nautilus/)
+- **System Monitor**:
+  [Resources](https://gitlab.gnome.org/GNOME/Incubator/resources) through Kitty)
 - **Disk Manager**: [GNOME Disks](https://apps.gnome.org/DiskUtility/)
 - **Bluetooth Manager**: [blueman](https://github.com/blueman-project/blueman)
-- **Network Manager**: [nm-connection-editor](https://archlinux.org/packages/extra/x86_64/networkmanager/)
+- **Network Manager**:
+  [nm-connection-editor](https://archlinux.org/packages/extra/x86_64/networkmanager/)
 - **Audio Control**:
   [Pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
 
 ##### Multimedia
 
-- **Image Viewer**:
-  [Ristretto](https://archlinux.org/packages/extra/x86_64/ristretto/)
-- **Document Viewer**:
-  [Atril](https://archlinux.org/packages/extra/x86_64/atril/)
-- **Music Player**:
-  [Fooyin](https://archlinux.org/packages/extra/x86_64/fooyin/)
-- **Video Player**: [mpv](https://archlinux.org/packages/extra/x86_64/mpv/)
+- **Image Viewer**: [Loupe](https://apps.gnome.org/Loupe/)
+- **Document Viewer**: [Papers](https://apps.gnome.org/en/Papers/)
+- **Music Player**: [Decibels](https://apps.gnome.org/en/Decibels/)
+- **Video Player**: [Showtime](https://apps.gnome.org/en/Showtime/)
 
 #### Terminal Ricing
 
@@ -69,9 +66,10 @@ Things I recommend you have
 
 ##### Theming tools
 
-- **QT Customizer**: [qt6ct](https://github.com/trialuser02/qt6ct)
+- **QT Customizer**: [qt6ct](https://github.com/trialuser02/qt6ct),
+  [qt5ct](https://github.com/desktop-app/qt5ct),
+  [Kvantum](https://github.com/tsujan/kvantum)
 - **GTK Customizer**: [nwg-look](https://github.com/nwg-piotr/nwg-look)
-- **Kvantum**: [Kvantum](https://github.com/tsujan/kvantum)
 
 ### Everyday
 
