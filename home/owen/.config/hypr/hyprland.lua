@@ -29,7 +29,6 @@ hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_MENU_PREFIX", "arch-")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("KDE_SESSION_VERSION", "6")
 hl.env("GSK_RENDERER", "ngl")
 hl.env("EDITOR", "nano")
 
@@ -73,8 +72,10 @@ hl.config({
             size = 5,
             passes = 2,
             popups = true,
-            special = true
-        }
+            special = true,
+        },
+        motion_blur = { enabled = true },
+        wobble = { enabled = true, intensity = 0.1 },
     },
 
     animations = {
@@ -110,9 +111,6 @@ hl.config({
 -- Window & Layer Rules
 --------------------------------------------------------------------------------
 
-hl.window_rule({ match = { class = "^(steam_app_.)" }, fullscreen = true })
-hl.window_rule({ match = { class = "^(steam_app_223470)$" }, stay_focused = true })
-hl.window_rule({ match = { class = "^(kcm_about-distro)$" }, float = true })
 hl.window_rule({ match = { class = "." }, suppress_event = "maximize" })
 hl.window_rule({ match = { xwayland = true, float = true }, no_focus = true })
 hl.window_rule({ match = { class = ".*" }, opacity = "0.85 0.85" })
@@ -190,15 +188,43 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("__NV_PRIME_RENDER_OFFLOAD=0 hyprlock")
 
     -- Clipboard Daemon
-    hl.exec_cmd("wl-paste --type text --watch cliphist store")
-    hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    hl.exec_cmd("wl-clip-persist --clipboard regular")
 
     -- Look & Feel / Initialization Commands
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
     hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
-    hl.exec_cmd("gsettings set org.gnome.desktop.wm.preferences button-layout ':'")
     hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 
     hl.dispatch(hl.dsp.focus({ workspace = 2 }))
     hl.dispatch(hl.dsp.focus({ monitor = "DP-1" }))
 end)
+
+--------------------------------------------------------------------------------
+-- Plugins
+--------------------------------------------------------------------------------
+
+if hl.plugin.dynamic_cursors then
+    hl.config { plugin = { dynamic_cursors = {
+        enabled = true,
+
+        mode = "tilt",
+
+        threshold = 3,
+
+        tilt = {
+            limit = 5000,
+            activation = "negative_quadratic",
+            window = 100,
+            full = 60,
+        },
+
+        shake = { enabled = false },
+
+        hyprcursor = {
+            nearest = 1,
+            enabled = true,
+            resolution = -1,
+            fallback = "clientside",
+        },
+    }}}
+end

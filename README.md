@@ -21,6 +21,9 @@ My Hyprland dot/config files
 
 # Basic configuration
 
+Here I have listed what I use and how I configured my experience. Use as you
+wish.
+
 ## Apps
 
 The apps I choose to use. As always, use what you wish
@@ -38,13 +41,22 @@ Things I recommend you have
 - **Application launcher**: [wofi](https://github.com/SimplyCEO/wofi)
 - **Screen Locker**: [hyprlock](https://github.com/hyprwm/hyprlock)
 - **Screenshot manager**: [hyprshot](https://github.com/Gustash/Hyprshot)
+- **Clipboard Manager**:
+  [wl-clip-persist](https://archlinux.org/packages/extra/x86_64/wl-clip-persist/)
 
 #### Essential Apps
 
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **File Manager**: [Nautilus](https://apps.gnome.org/en/Nautilus/)
+  - With the following extensions:
+    - **nautilus-admin-gtk4**:
+      [Github Repo](https://github.com/MacTavishAO/nautilus-admin-gtk4)
+    - **nautilus-image-converter**:
+      [Gitlab Repo](https://gitlab.gnome.org/coreyberla/nautilus-image-converter)
+    - **nautilus-open-any-terminal**:
+      [Github Repo](https://github.com/Stunkymonkey/nautilus-open-any-terminal)
 - **System Monitor**:
-  [Resources](https://gitlab.gnome.org/GNOME/Incubator/resources) through Kitty)
+  [Resources](https://gitlab.gnome.org/GNOME/Incubator/resources)
 - **Disk Manager**: [GNOME Disks](https://apps.gnome.org/DiskUtility/)
 - **Bluetooth Manager**: [blueman](https://github.com/blueman-project/blueman)
 - **Network Manager**:
@@ -143,3 +155,8 @@ Some mods I've chosen to enhance Zen for myself.
     - Transparent Glance = `true`
     - Enable custom background color = `true`
       - Set color to: `#212121`
+
+## Plugins
+
+- **hypr-dynamic-cursors**:
+  [Github Repo](https://github.com/VirtCode/hypr-dynamic-cursors)
