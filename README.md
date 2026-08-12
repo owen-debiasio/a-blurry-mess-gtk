@@ -7,12 +7,7 @@ My Hyprland dot/config files
 
 <!-- markdownlint-disable MD033 -->
 
-<img
-  width="1920"
-  height="1080"
-  alt="2026-08-11-145123_hyprshot"
-  src="https://github.com/user-attachments/assets/2bfb2f6d-9459-4a76-9df1-3d9c11403a63"
-/>
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/77088991-9e11-4567-b387-e5bf8c42b4c9" />
 
 <!-- markdownlint-disable MD025 -->
 
