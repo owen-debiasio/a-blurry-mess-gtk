@@ -13,6 +13,7 @@ local systemMonitor = "kitty btop"
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("__NV_PRIME_RENDER_OFFLOAD", "1")
 hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
 hl.env("ENABLE_VKBASALT", "1")
 hl.env("GDK_BACKEND", "wayland,x11")
@@ -179,7 +180,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dbus-update-activation-environment --all")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    
+
     -- Start gnome-keyring and export its variables (wrapped in sh -c for eval/&& support)
     hl.exec_cmd("sh -c 'eval $(gnome-keyring-daemon --start --components=secrets,ssh) && dbus-update-activation-environment --systemd SSH_AUTH_SOCK'")
 
