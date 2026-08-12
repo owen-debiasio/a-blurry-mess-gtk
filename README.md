@@ -16,6 +16,9 @@ My Hyprland dot/config files
 
 <!-- markdownlint-disable MD025 -->
 
+> [!IMPORTANT]  
+> This branch is currently built for Hyprland `v0.56.0`
+
 # Basic configuration
 
 ## Apps
