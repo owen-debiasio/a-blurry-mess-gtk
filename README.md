@@ -59,6 +59,7 @@ Things I recommend you have
 - **Bluetooth Manager**: [blueman](https://github.com/blueman-project/blueman)
 - **Network Manager**:
   [nm-connection-editor](https://archlinux.org/packages/extra/x86_64/networkmanager/)
+  (part of `NetworkManager`)
 - **Audio Control**:
   [Pavucontrol](https://archlinux.org/packages/extra/x86_64/pavucontrol/)
 
@@ -110,7 +111,7 @@ This rice is heavily inspired by the colors of
 [Orchis Dark](https://github.com/vinceliuice/Orchis-theme), so that's what I
 have provided here.
 
-### Universal
+### System
 
 - **GTK/QT**:
   [Orchis Dark (Dark Blue Regular)](https://github.com/vinceliuice/Orchis-theme)
@@ -120,25 +121,37 @@ have provided here.
 - **Cursor Theme**:
   [Bibata Modern Classic](https://github.com/ful1e5/Bibata_Cursor)
 
-### [Zed](https://github.com/zed-industries/zed)
+### Application themes
 
-- **Theme**:
-  [Orchis Dark Zed Theme](https://github.com/owen-debiasio/orchis-dark-zed-theme)
+#### Steam
 
-### [Zen Browser](https://github.com/zen-browser)
+- [AdwSteamGtk](https://github.com/owen-debiasio/orchis-dark-zed-theme)
+  (default colors, no window controls)
 
-- [Zen Internet](https://github.com/sameerasw/zeninternet) +
-  [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)
+#### Zed
+
+- [Orchis Dark Zed Theme](https://github.com/owen-debiasio/orchis-dark-zed-theme)
+
+#### Zen Browser
+
+##### Extensions
+
+> [!NOTE]  
+> I only have listed the extensions to give Zen its look. Other extensions I have
+such as `UBlock Origin` are not listed.
+
+- [Zen Internet](https://github.com/sameerasw/zeninternet)
+- [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)
   extension
 
-#### Accent color
+##### Accent color
 
 > [!NOTE]  
 > Set through `about:config` -> `zen.theme.accent-color`
 
 - Accent color: `#3584e4`
 
-#### Mods
+##### Mods
 
 Some mods I've chosen to enhance Zen for myself.
 
