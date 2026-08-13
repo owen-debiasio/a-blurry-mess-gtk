@@ -9,27 +9,33 @@ local fileManager = "nautilus"
 local menu = "wofi --show drun -IibnO"
 local systemMonitor = "resources"
 
+--------------------------------------------------------------------------------
 -- Environment Variables
+--------------------------------------------------------------------------------
+
+-- NVIDIA / Hardware Acceleration
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
-hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
+
+-- Prime Offload / Vulkan
 hl.env("__NV_PRIME_RENDER_OFFLOAD", "1")
 hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
 hl.env("ENABLE_VKBASALT", "1")
+
+-- Toolkit / Backend Preferences
 hl.env("GDK_BACKEND", "wayland,x11")
-hl.env("SDL_VIDEODRIVER", "wayland")
-hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("CLUTTER_BACKEND", "wayland")
+
+-- Qt Settings
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("QT_SCALE_FACTOR_ROUNDING_POLICY", "RoundPreferFloor")
-hl.env("QT_QUICK_CONTROLS_STYLE", "org.kde.desktop")
-hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
-hl.env("XDG_MENU_PREFIX", "arch-")
+
+-- Cursor & Default Apps
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("GSK_RENDERER", "ngl")
 hl.env("EDITOR", "nano")
 
 --------------------------------------------------------------------------------
@@ -75,27 +81,29 @@ hl.config({
             special = true,
         },
         motion_blur = { enabled = true },
-        wobble = { enabled = true, intensity = 0.1 },
+        wobble = { enabled = true, intensity = 0.075 },
     },
 
     animations = {
         enabled = true,
         bezier = {
-            { name = "easeOutQuint",  p1 = 0.23, p2 = 1,    p3 = 0.32, p4 = 1 },
-            { name = "almostLinear", p1 = 0.5,  p2 = 0.5,  p3 = 0.75, p4 = 1.0 },
-            { name = "quick",        p1 = 0.15, p2 = 0,    p3 = 0.1,  p4 = 1 }
+            { name = "easeOutQuint",  p1 = 0.23, p2 = 1,   p3 = 0.32, p4 = 1 },
+            { name = "almostLinear", p1 = 0.5,  p2 = 0.5, p3 = 0.75, p4 = 1.0 },
+            { name = "quick",        p1 = 0.15, p2 = 0,   p3 = 0.1,  p4 = 1 }
         },
         animation = {
-            { name = "global",      enabled = true, speed = 8, curve = "default" },
-            { name = "border",      enabled = true, speed = 10, curve = "easeOutQuint" },
-            { name = "windows",     enabled = true, speed = 6, curve = "easeOutQuint" },
-            { name = "windowsIn",   enabled = true, speed = 15, curve = "quick", style = "popin 95%" },
-            { name = "windowsOut",  enabled = true, speed = 6, curve = "quick", style = "popin 85%" },
-            { name = "fadeIn",      enabled = true, speed = 15, curve = "quick" },
-            { name = "fadeOut",     enabled = true, speed = 5, curve = "almostLinear" },
-            { name = "fade",        enabled = true, speed = 5, curve = "quick" },
-            { name = "layers",      enabled = true, speed = 6, curve = "easeOutQuint" },
-            { name = "workspaces",  enabled = true, speed = 5, curve = "almostLinear", style = "fade" }
+            -- Parent animations (sub-animations inherit speed & curve unless overridden)
+            { name = "global",     enabled = true, speed = 8, curve = "default" },
+            { name = "windows",    enabled = true, speed = 6, curve = "easeOutQuint" },
+            { name = "border",     enabled = true, speed = 10, curve = "easeOutQuint" },
+            { name = "layers",     enabled = true, speed = 6, curve = "easeOutQuint" },
+            { name = "fade",       enabled = true, speed = 5, curve = "quick" },
+
+            -- Specific overrides (only keeping unique styles or curves)
+            { name = "windowsIn",  enabled = true, speed = 15, curve = "quick", style = "popin 95%" },
+            { name = "windowsOut", enabled = true, speed = 6,  curve = "quick", style = "popin 85%" },
+            { name = "fadeOut",    enabled = true, speed = 5,  curve = "almostLinear" },
+            { name = "workspaces", enabled = true, speed = 5,  curve = "almostLinear", style = "fade" }
         }
     },
 
@@ -111,9 +119,15 @@ hl.config({
 -- Window & Layer Rules
 --------------------------------------------------------------------------------
 
-hl.window_rule({ match = { class = "." }, suppress_event = "maximize" })
-hl.window_rule({ match = { xwayland = true, float = true }, no_focus = true })
-hl.window_rule({ match = { class = ".*" }, opacity = "0.85 0.85" })
+-- Window Rules
+hl.window_rule({
+    match = { class = "^steam_app_.*" },
+    fullscreen = true,
+    suppress_event = "maximize",
+    stay_focused = true
+})
+
+hl.window_rule({ match = { class = ".*" }, opacity = "0.85 0.85 1.0" })
 
 -- Layer Rules
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
@@ -173,12 +187,11 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Autostart
 --------------------------------------------------------------------------------
 hl.on("hyprland.start", function()
-    -- Core Daemons & Security
-    hl.exec_cmd("dbus-update-activation-environment --all")
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    -- Export all env variables to DBus & Systemd in a single command
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    hl.exec_cmd("systemctl --user import-environment")
 
-    -- Start gnome-keyring and export its variables (wrapped in sh -c for eval/&& support)
+    -- Start keyring & sync SSH socket
     hl.exec_cmd("sh -c 'eval $(gnome-keyring-daemon --start --components=secrets,ssh) && dbus-update-activation-environment --systemd SSH_AUTH_SOCK'")
 
     -- UI Desktop Components
@@ -190,11 +203,7 @@ hl.on("hyprland.start", function()
     -- Clipboard Daemon
     hl.exec_cmd("wl-clip-persist --clipboard regular")
 
-    -- Look & Feel / Initialization Commands
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'")
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
-    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
-
+    -- Focus target defaults
     hl.dispatch(hl.dsp.focus({ workspace = 2 }))
     hl.dispatch(hl.dsp.focus({ monitor = "DP-1" }))
 end)
