@@ -44,8 +44,6 @@ Things I recommend you have
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **File Manager**: [Nautilus](https://apps.gnome.org/en/Nautilus/)
   - With the following extensions:
-    - **nautilus-admin-gtk4**:
-      [Github Repo](https://github.com/MacTavishAO/nautilus-admin-gtk4)
     - **nautilus-image-converter**:
       [Gitlab Repo](https://gitlab.gnome.org/coreyberla/nautilus-image-converter)
     - **nautilus-open-any-terminal**:
