@@ -209,7 +209,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("swaync")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprpaper")
-    hl.exec_cmd("__NV_PRIME_RENDER_OFFLOAD=0 hyprlock")
+    hl.exec_cmd("hyprlock")
 
     -- Clipboard Daemon
     hl.exec_cmd("wl-clip-persist --clipboard regular")
