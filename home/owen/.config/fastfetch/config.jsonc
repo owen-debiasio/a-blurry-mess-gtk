@@ -16,64 +16,64 @@
         {
             "type": "user",
             "key": "  user    ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "title",
             "key": " 󰌢 hname   ",
-            "keyColor": "red",
+            "keyColor": "blue",
             "format": "{2}",
         },
         {
             "type": "uptime",
             "key": " 󰅐 uptime  ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "os",
             "key": " 󰌽 distro  ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "kernel",
             "key": " 󰌽 kernel  ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "terminal",
             "key": "  term    ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "shell",
             "key": " 󰞷 shell   ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "gpu",
             "key": "  gpu     ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "cpu",
             "key": "  cpu     ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
 
         {
             "type": "disk",
             "key": " 󰋊 disk    ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "memory",
             "key": " 󰍛 memory  ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         {
             "type": "localip",
             "key": " 󰩟 network ",
-            "keyColor": "red",
+            "keyColor": "blue",
         },
         "break",
         {
